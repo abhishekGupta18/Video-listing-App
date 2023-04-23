@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 
+import { useVideosContext } from "../Context/VideosContext";
+
 import "./VideosCard.css";
+
 export const VideoCard = ({
   id,
   title,
@@ -9,6 +12,7 @@ export const VideoCard = ({
   thumbnail,
   duration,
 }) => {
+  const { addToLike } = useVideosContext();
   return (
     <article>
       <img src={thumbnail} alt={title} />
@@ -17,7 +21,7 @@ export const VideoCard = ({
         <NavLink to={`/allVideos/${id}`}>Watch here</NavLink>
       </p>
       <div>
-        <button>Liked</button>
+        <button onClick={() => addToLike(id)}>Liked</button>
         <button>Watch later</button>
       </div>
     </article>

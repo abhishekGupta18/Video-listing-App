@@ -21,8 +21,30 @@ export const VideosContextProvider = ({ children }) => {
     getData();
   }, []);
 
+  const addToLike = (id) => {
+    // const newVideos = [...videos];
+    const likedVideo = videos?.map((item) => {
+      if (item.id === id) {
+        return { ...item, like: true };
+      } else {
+        return item;
+      }
+    });
+    setVideos(likedVideo);
+  };
+  const RemoveFromLike = (id) => {
+    const removeVideo = videos?.map((item) => {
+      if (item.id === id) {
+        return { ...item, like: false };
+      } else {
+        return item;
+      }
+    });
+    setVideos(removeVideo);
+  };
+
   return (
-    <VideosContext.Provider value={{ videos }}>
+    <VideosContext.Provider value={{ videos, addToLike, RemoveFromLike }}>
       {children}
     </VideosContext.Provider>
   );

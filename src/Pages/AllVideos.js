@@ -10,7 +10,6 @@ export const AllVideos = () => {
           display: "flex",
           gap: "10px",
           flexWrap: "wrap",
-          justifyContent: "space-evenly",
           marginTop: "100px",
         }}
       >
