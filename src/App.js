@@ -7,6 +7,7 @@ import { HomePage } from "./Pages/Home";
 import { AllVideos } from "./Pages/AllVideos";
 import { LikedVideos } from "./Pages/LikedVideos";
 import { WatchLater } from "./Pages/WatchLater";
+import { VideoDetails } from "./Pages/VideoDetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/allVideos" element={<AllVideos />} />
         <Route path="/likedVideos" element={<LikedVideos />} />
         <Route path="/watchLater" element={<WatchLater />} />
+        <Route path="/allVideos/:videoId" element={<VideoDetails />} />
       </Routes>
     </div>
   );
