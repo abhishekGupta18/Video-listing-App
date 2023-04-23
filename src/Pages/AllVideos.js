@@ -8,7 +8,7 @@ export const AllVideos = () => {
       <ul
         style={{
           display: "flex",
-          gap: "10px",
+          gap: "20px",
           flexWrap: "wrap",
           marginTop: "100px",
         }}

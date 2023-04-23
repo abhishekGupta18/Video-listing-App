@@ -43,8 +43,22 @@ export const VideosContextProvider = ({ children }) => {
     setVideos(removeVideo);
   };
 
+  const watchLater = (id) => {
+    const addWatchLater = videos?.map((item) => {
+      if (item.id === id) {
+        return { ...item, watchLater: true };
+      } else {
+        return item;
+      }
+    });
+    setVideos(addWatchLater);
+  };
+  console.log(videos);
+
   return (
-    <VideosContext.Provider value={{ videos, addToLike, RemoveFromLike }}>
+    <VideosContext.Provider
+      value={{ videos, addToLike, RemoveFromLike, watchLater }}
+    >
       {children}
     </VideosContext.Provider>
   );

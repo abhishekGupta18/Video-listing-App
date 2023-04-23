@@ -12,7 +12,7 @@ export const VideoCard = ({
   thumbnail,
   duration,
 }) => {
-  const { addToLike } = useVideosContext();
+  const { addToLike, watchLater } = useVideosContext();
   return (
     <article>
       <img src={thumbnail} alt={title} />
@@ -22,7 +22,7 @@ export const VideoCard = ({
       </p>
       <div>
         <button onClick={() => addToLike(id)}>Liked</button>
-        <button>Watch later</button>
+        <button onClick={() => watchLater(id)}>Watch later</button>
       </div>
     </article>
   );

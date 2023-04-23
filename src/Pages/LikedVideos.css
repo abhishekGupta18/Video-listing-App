@@ -1,13 +1,6 @@
-article {
+ul article {
   width: 300px;
-  border: 1px solid black;
 }
-
-article img {
+ul article img {
   width: 80%;
-  margin-top: 10px;
-}
-
-article button {
-  margin-bottom: 10px;
 }

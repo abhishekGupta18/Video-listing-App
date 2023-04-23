@@ -7,19 +7,11 @@ export const LikedVideos = () => {
   return (
     <div>
       <h1>List of all liked videos</h1>
-      <ul
-        style={{
-          display: "flex",
-          gap: "10px",
-          flexWrap: "wrap",
-          marginTop: "100px",
-          justifyContent: "space-evenly",
-        }}
-      >
+      <ul>
         {videos
           ?.filter((item) => item.like)
           .map(({ id, title, description, url, thumbnail, duration }) => (
-            <li style={{ listStyle: "none" }}>
+            <article style={{ listStyle: "none" }}>
               <img src={thumbnail} alt={title} />
               <h3>{title}</h3>
               <p>
@@ -28,7 +20,7 @@ export const LikedVideos = () => {
               <button onClick={() => RemoveFromLike(id)}>
                 Remove from like
               </button>
-            </li>
+            </article>
           ))}
       </ul>
     </div>
